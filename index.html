@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#061330">
+<meta name="description" content="SAURABH MOBILE, Saidpur, Ghazipur. Mobile phones and accessories. Enquire on WhatsApp.">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>SAURABH MOBILE</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: sticky navy header, cyan-lit hero, category chips + search, 2-col product grid on phones, offers, contact. */
+:root {
+  --bg: #ffffff;
+  --surface: #f1f6fb;
+  --card: #ffffff;
+  --ink: #0a1f44;
+  --ink-soft: #4a5d7e;
+  --line: #d9e3f0;
+  --navy: #0a1f44;
+  --navy-deep: #061330;
+  --cyan: #00b8d9;
+  --cyan-bright: #38e1ff;
+  --on-navy: #ffffff;
+  --on-navy-soft: #b8c7e0;
+  --wa: #1fa855;
+  --tag-bg: #fff4d6;
+  --tag-ink: #7a5600;
+  --font-display: "Marcellus", "Palatino Linotype", Georgia, serif;
+  --font-body: "Manrope", "Segoe UI", Roboto, system-ui, sans-serif;
+  --art-body: #0a1f44;
+  --art-screen: #38e1ff;
+  --art-soft: #cfe3f5;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #071229; --surface: #0b1a38; --card: #0f2147; --ink: #eef3fb; --ink-soft: #9fb2d3;
+    --line: #1d3563; --cyan: #38e1ff; --tag-bg: #3a2f0a; --tag-ink: #ffd466;
+    --art-body: #dbe9fb; --art-screen: #00b8d9; --art-soft: #1d3563; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #071229; --surface: #0b1a38; --card: #0f2147; --ink: #eef3fb; --ink-soft: #9fb2d3;
+  --line: #1d3563; --cyan: #38e1ff; --tag-bg: #3a2f0a; --tag-ink: #ffd466;
+  --art-body: #dbe9fb; --art-screen: #00b8d9; --art-soft: #1d3563; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 15px; line-height: 1.55;
+  padding-inline: 0;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--navy-deep); }
+.wrap { width: 100%; max-width: 1080px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--cyan-bright); outline-offset: 2px; border-radius: 6px; }
+
+/* header */
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--navy-deep); color: var(--on-navy); border-bottom: 1px solid rgba(56,225,255,.25); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
+.logo { font-family: var(--font-display); text-decoration: none; display: flex; flex-direction: column; line-height: 1; min-width: 0; }
+.logo b { font-weight: 400; font-size: 21px; letter-spacing: .22em; white-space: nowrap; }
+.logo b i { font-style: normal; color: var(--cyan-bright); }
+.logo small { font-family: var(--font-body); font-size: 8.5px; letter-spacing: .5em; color: var(--on-navy-soft); margin-top: 5px; text-transform: uppercase; padding-left: 2px; }
+nav.links { display: none; gap: 22px; font-weight: 600; font-size: 14px; }
+nav.links a { text-decoration: none; color: var(--on-navy-soft); }
+nav.links a:hover { color: var(--cyan-bright); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; font: 700 14px var(--font-body); text-decoration: none; border: 0; cursor: pointer; }
+.btn-wa { background: var(--wa); color: #fff; }
+.btn-ghost { background: transparent; color: var(--on-navy); border: 1.5px solid rgba(255,255,255,.4); }
+.btn-line { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
+.btn-sm { min-height: 40px; padding: 0 14px; font-size: 13px; }
+.wa-ico { width: 18px; height: 18px; flex: none; }
+
+/* hero */
+.hero { position: relative; overflow: hidden; color: var(--on-navy); background: radial-gradient(120% 90% at 85% 10%, #0f4a78 0%, rgba(15,74,120,0) 55%), linear-gradient(160deg, #0a1f44 0%, #061330 100%); }
+.hero .wrap { display: grid; grid-template-columns: 1fr; gap: 20px; padding-block: 34px 38px; position: relative; }
+.eyebrow { font-size: 11.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--cyan-bright); }
+.hero h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 8.5vw, 52px); line-height: 1.12; margin: 8px 0 12px; text-wrap: balance; }
+.hero h1 em { font-style: normal; color: var(--cyan-bright); }
+.hero p { margin: 0 0 20px; color: var(--on-navy-soft); max-width: 46ch; }
+.hero .cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.hero-art { justify-self: center; width: min(62%, 250px); }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.14); font-size: 13px; color: var(--on-navy-soft); }
+.facts span::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--cyan-bright); margin-right: 8px; }
+
+/* sections */
+section { padding-block: 34px 6px; scroll-margin-top: 70px; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(24px, 6vw, 32px); margin: 0 0 6px; text-wrap: balance; }
+.sub { margin: 0 0 18px; color: var(--ink-soft); max-width: 60ch; }
+
+/* categories */
+.cats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cat { text-align: left; background: var(--navy); color: var(--on-navy); border: 1px solid rgba(56,225,255,.3); border-radius: 16px; padding: 16px; font: inherit; cursor: pointer; display: flex; flex-direction: column; gap: 6px; min-height: 120px; }
+.cat svg { width: 38px; height: 38px; }
+.cat strong { font-family: var(--font-display); font-weight: 400; font-size: 19px; }
+.cat span { font-size: 12.5px; color: var(--on-navy-soft); }
+.cat:hover { border-color: var(--cyan-bright); }
+
+/* search + filter */
+.tools { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 61px); z-index: 10; background: var(--bg); padding-block: 10px 8px; }
+.search { position: relative; }
+.search input { width: 100%; height: 48px; border-radius: 14px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); padding: 0 16px 0 44px; font: 500 15px var(--font-body); }
+.search input::placeholder { color: var(--ink-soft); }
+.search svg { position: absolute; left: 14px; top: 14px; width: 20px; height: 20px; color: var(--ink-soft); }
+.chips { display: flex; gap: 8px; overflow-x: auto; padding-block: 10px 4px; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: none; min-height: 38px; padding: 0 15px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--card); color: var(--ink); font: 600 13px var(--font-body); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; box-shadow: inset 0 -3px 0 var(--cyan-bright); }
+.count { font-size: 13px; color: var(--ink-soft); margin: 8px 0 12px; }
+
+/* products */
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.card .img { position: relative; background: linear-gradient(180deg, var(--surface), var(--card)); aspect-ratio: 1 / 1; display: grid; place-items: center; padding: 14px; }
+.card .img svg { width: 78%; max-height: 100%; }
+.tag { position: absolute; top: 8px; left: 8px; font-size: 9.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: var(--tag-bg); color: var(--tag-ink); padding: 3px 7px; border-radius: 6px; }
+.card .body { padding: 12px; display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.kind { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--cyan); }
+.card h3 { margin: 0; font-size: 14.5px; line-height: 1.3; font-weight: 700; overflow-wrap: anywhere; }
+.spec { font-size: 12px; color: var(--ink-soft); }
+.price { margin-top: auto; padding-top: 8px; font-weight: 800; font-size: 17px; font-variant-numeric: tabular-nums; }
+.price small { display: block; font-size: 10.5px; font-weight: 600; color: var(--ink-soft); }
+.card .btn { margin-top: 10px; width: 100%; }
+.empty { grid-column: 1 / -1; text-align: center; padding: 34px 16px; border: 1.5px dashed var(--line); border-radius: 16px; color: var(--ink-soft); }
+.empty .btn { margin-top: 12px; }
+.note { margin-top: 14px; font-size: 12.5px; color: var(--ink-soft); background: var(--surface); border-radius: 12px; padding: 10px 14px; }
+
+/* offers */
+.offers { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.offer { border-radius: 18px; padding: 18px; background: linear-gradient(150deg, var(--navy) 0%, #0e3358 100%); color: var(--on-navy); display: flex; flex-direction: column; gap: 8px; position: relative; overflow: hidden; }
+.offer .tag { position: static; align-self: flex-start; }
+.offer h3 { font-family: var(--font-display); font-weight: 400; font-size: 21px; margin: 4px 0 0; }
+.offer p { margin: 0 0 8px; color: var(--on-navy-soft); font-size: 14px; }
+.offer .btn { align-self: flex-start; }
+
+/* contact */
+.contact { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px; min-width: 0; }
+.panel h3 { margin: 0 0 10px; font-family: var(--font-display); font-weight: 400; font-size: 20px; }
+.panel p { margin: 0 0 10px; overflow-wrap: anywhere; }
+.num { font-weight: 800; font-size: 20px; font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.landmark { display: inline-block; background: var(--navy); color: var(--cyan-bright); font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; margin-bottom: 10px; }
+
+footer { margin-top: 40px; background: var(--navy-deep); color: var(--on-navy-soft); font-size: 13px; }
+footer .wrap { padding-block: 24px calc(86px + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; gap: 6px; }
+footer .logo b { color: var(--on-navy); }
+
+/* floating whatsapp */
+.fab { position: fixed; z-index: 25; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); min-height: 52px; padding: 0 20px 0 16px; border-radius: 999px; background: var(--wa); color: #fff; font: 800 14px var(--font-body); display: flex; align-items: center; gap: 8px; text-decoration: none; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+.fab svg { width: 24px; height: 24px; }
+
+@media (min-width: 600px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cats { grid-template-columns: repeat(4, 1fr); }
+  .offers, .contact { grid-template-columns: repeat(3, 1fr); }
+  .contact { grid-template-columns: 1.3fr 1fr; }
+  nav.links { display: flex; }
+}
+@media (min-width: 860px) {
+  .hero .wrap { grid-template-columns: 1.2fr .8fr; align-items: center; padding-block: 56px; }
+  .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hero-art { width: min(100%, 300px); }
+}
+@media (max-width: 360px) { .logo b { font-size: 17px; letter-spacing: .16em; } .btn-sm.hdr { display: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#home" aria-label="SAURABH MOBILE home">
+      <b>SAURABH <i>MOBILE</i></b>
+      <small>Smartphones &amp; Accessories</small>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#categories">Categories</a>
+      <a href="#products">Products</a>
+      <a href="#offers">Offers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-wa btn-sm hdr" id="hdrWa" href="#" target="_blank" rel="noopener">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm-3.200 5.500c.3 0 .6 0 .8.5l.7 1.700c.1.300 0 .5-.1.700l-.5.600c.8 1.500 1.900 2.500 3.300 3.200l.6-.7c.2-.2.400-.3.700-.2l1.700.8c.3.100.4.300.4.500 0 .8-.7 1.700-1.600 1.900-.8.200-2.200 0-3.800-.9-1.800-1-3.200-2.700-3.900-4.300-.5-1.200-.4-2.300.2-3 .3-.3.600-.5 1.500-.8Z" fill-rule="evenodd"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<main id="home">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Saidpur, Ghazipur</div>
+        <h1>Your trusted <em>smartphone</em> shop in Saidpur</h1>
+        <p>Mobile phones, chargers, earbuds, covers and more. Browse the range, then ask for today's price and availability on WhatsApp.</p>
+        <div class="cta">
+          <a class="btn btn-wa" data-wa="Hello SAURABH MOBILE, I would like to enquire about a mobile phone." href="#" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+          <a class="btn btn-ghost" href="#products">Browse products</a>
+        </div>
+        <div class="facts">
+          <span>Opposite Bank of Baroda</span>
+          <span>Open 8 AM to 8 PM</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 240 300" fill="none">
+          <defs>
+            <linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38e1ff"/><stop offset="1" stop-color="#0a4f8a"/></linearGradient>
+            <linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14305f"/><stop offset="1" stop-color="#061330"/></linearGradient>
+          </defs>
+          <circle cx="120" cy="150" r="118" fill="#38e1ff" opacity=".08"/>
+          <circle cx="120" cy="150" r="88" stroke="#38e1ff" stroke-opacity=".35"/>
+          <rect x="62" y="22" width="116" height="248" rx="22" fill="url(#gd)" stroke="#38e1ff" stroke-width="2"/>
+          <rect x="70" y="38" width="100" height="216" rx="12" fill="url(#gl)" opacity=".92"/>
+          <rect x="102" y="28" width="36" height="6" rx="3" fill="#061330"/>
+          <path d="M70 170c28-30 52 6 100-26v110H70Z" fill="#061330" opacity=".35"/>
+          <rect x="82" y="64" width="58" height="9" rx="4.5" fill="#fff" opacity=".85"/>
+          <rect x="82" y="80" width="38" height="6" rx="3" fill="#fff" opacity=".5"/>
+          <rect x="82" y="214" width="76" height="24" rx="12" fill="#fff" opacity=".9"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <section id="categories" class="wrap">
+    <h2>Shop by category</h2>
+    <p class="sub">Choose a category to see sample products below.</p>
+    <div class="cats">
+      <button class="cat" data-go="phone" type="button">
+        <svg viewBox="0 0 40 40" fill="none" stroke="#38e1ff" stroke-width="2" aria-hidden="true"><rect x="11" y="3" width="18" height="34" rx="4"/><path d="M17 7h6"/><circle cx="20" cy="31" r="1.5" fill="#38e1ff"/></svg>
+        <strong>Mobile Phones</strong><span>Entry, mid-range and premium</span>
+      </button>
+      <button class="cat" data-go="accessory" type="button">
+        <svg viewBox="0 0 40 40" fill="none" stroke="#38e1ff" stroke-width="2" aria-hidden="true"><path d="M8 22a12 12 0 0 1 24 0"/><rect x="5" y="21" width="6" height="11" rx="3"/><rect x="29" y="21" width="6" height="11" rx="3"/></svg>
+        <strong>Accessories</strong><span>Earbuds, chargers, covers, cables</span>
+      </button>
+    </div>
+  </section>
+
+  <section id="products" class="wrap">
+    <h2>Products</h2>
+    <p class="sub">These are sample products to show the layout. Real stock and prices will be added later.</p>
+    <div class="tools">
+      <label class="search" for="q">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Search phones, earbuds, chargers…" autocomplete="off" enterkeyhint="search">
+      </label>
+      <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+    </div>
+    <div class="count" id="count" aria-live="polite"></div>
+    <div class="grid" id="grid"></div>
+    <div class="note">Sample products only. Names, specifications and prices are placeholders, not real stock. Tap WhatsApp to ask for the current price.</div>
+  </section>
+
+  <section id="offers" class="wrap">
+    <h2>Special offers</h2>
+    <p class="sub">Your real offers will be shown here. These cards are samples without any discount.</p>
+    <div class="offers">
+      <div class="offer">
+        <span class="tag">Sample offer</span>
+        <h3>Festival offer</h3>
+        <p>Space for your real festival or seasonal offer. Add the offer name, dates and terms.</p>
+        <a class="btn btn-wa btn-sm" data-wa="Hello SAURABH MOBILE, please tell me about current offers." href="#" target="_blank" rel="noopener">Ask about offers</a>
+      </div>
+      <div class="offer">
+        <span class="tag">Sample offer</span>
+        <h3>Exchange enquiry</h3>
+        <p>Space for an exchange offer on old phones. Value is decided in the shop.</p>
+        <a class="btn btn-wa btn-sm" data-wa="Hello SAURABH MOBILE, I want to ask about exchanging my old phone." href="#" target="_blank" rel="noopener">Ask on WhatsApp</a>
+      </div>
+      <div class="offer">
+        <span class="tag">Sample offer</span>
+        <h3>Phone + accessories</h3>
+        <p>Space for a combo such as phone with cover and screen guard. Add your real combo here.</p>
+        <a class="btn btn-wa btn-sm" data-wa="Hello SAURABH MOBILE, I want to ask about phone and accessory combos." href="#" target="_blank" rel="noopener">Ask on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="wrap">
+    <h2>Visit or contact us</h2>
+    <p class="sub">Come to the shop or send a WhatsApp message.</p>
+    <div class="contact">
+      <div class="panel">
+        <h3>Shop address</h3>
+        <span class="landmark">Opposite Bank of Baroda</span>
+        <p><strong>SAURABH MOBILE</strong><br>Opposite Bank of Baroda, Saidpur,<br>Ghazipur, Uttar Pradesh, India</p>
+        <div class="row">
+          <a class="btn btn-line btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Saurabh+Mobile+Opposite+Bank+of+Baroda+Saidpur+Ghazipur+Uttar+Pradesh" target="_blank" rel="noopener">Open in Maps</a>
+        </div>
+        <p style="margin-top:12px"><strong>Shop timings</strong><br>8:00 AM to 8:00 PM</p>
+      </div>
+      <div class="panel">
+        <h3>WhatsApp</h3>
+        <p class="num" id="numText">+91 76189 59926</p>
+        <div class="row">
+          <a class="btn btn-wa btn-sm" data-wa="Hello SAURABH MOBILE, I have a question." href="#" target="_blank" rel="noopener">Chat now</a>
+          <button class="btn btn-line btn-sm" id="copyBtn" type="button">Copy number</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#home"><b>SAURABH <i>MOBILE</i></b></a>
+    <span>Opposite Bank of Baroda, Saidpur, Ghazipur, Uttar Pradesh</span>
+    <span>First preview version. Products, prices and offers are samples.</span>
+  </div>
+</footer>
+
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm-3.200 5.500c.3 0 .6 0 .8.5l.7 1.700c.1.300 0 .5-.1.700l-.5.600c.8 1.500 1.900 2.500 3.300 3.200l.6-.7c.2-.2.400-.3.700-.2l1.700.8c.3.100.4.300.4.500 0 .8-.7 1.700-1.600 1.900-.8.200-2.200 0-3.800-.9-1.800-1-3.200-2.700-3.900-4.300-.5-1.200-.4-2.300.2-3 .3-.3.600-.5 1.500-.8Z" fill-rule="evenodd"/></svg>
+  WhatsApp
+</a>
+
+<script>
+(function () {
+  var NUMBER = "917618959926";
+  function wa(text) { return "https://wa.me/" + NUMBER + "?text=" + encodeURIComponent(text); }
+
+  document.querySelectorAll("[data-wa]").forEach(function (a) { a.href = wa(a.getAttribute("data-wa")); });
+  document.getElementById("hdrWa").href = wa("Hello SAURABH MOBILE, I have a question.");
+  document.getElementById("fab").href = wa("Hello SAURABH MOBILE, I have a question.");
+
+  var ART = {
+    phone: '<svg viewBox="0 0 120 150" fill="none"><rect x="30" y="6" width="60" height="138" rx="11" style="fill:var(--art-body)"/><rect x="35" y="16" width="50" height="118" rx="6" style="fill:var(--art-screen)"/><rect x="52" y="10" width="16" height="3" rx="1.5" style="fill:var(--art-soft)"/><rect x="41" y="28" width="26" height="5" rx="2.5" fill="#fff" opacity=".85"/><rect x="41" y="38" width="18" height="3.500" rx="1.7" fill="#fff" opacity=".5"/></svg>',
+    earbuds: '<svg viewBox="0 0 120 120" fill="none"><rect x="14" y="62" width="92" height="46" rx="20" style="fill:var(--art-body)"/><rect x="20" y="68" width="80" height="2" style="fill:var(--art-soft)"/><ellipse cx="42" cy="38" rx="11" ry="14" style="fill:var(--art-screen)"/><path d="M42 50v18" stroke-width="6" stroke-linecap="round" style="stroke:var(--art-screen)"/><ellipse cx="78" cy="38" rx="11" ry="14" style="fill:var(--art-screen)"/><path d="M78 50v18" stroke-width="6" stroke-linecap="round" style="stroke:var(--art-screen)"/></svg>',
+    charger: '<svg viewBox="0 0 120 120" fill="none"><rect x="30" y="34" width="60" height="64" rx="10" style="fill:var(--art-body)"/><rect x="44" y="14" width="8" height="22" rx="2" style="fill:var(--art-screen)"/><rect x="68" y="14" width="8" height="22" rx="2" style="fill:var(--art-screen)"/><rect x="48" y="80" width="24" height="8" rx="3" style="fill:var(--art-soft)"/><path d="M63 48 53 66h8l-3 14 12-20h-8Z" style="fill:var(--art-screen)"/></svg>',
+    cable: '<svg viewBox="0 0 120 120" fill="none"><rect x="12" y="22" width="22" height="14" rx="3" style="fill:var(--art-body)"/><path d="M34 29h14c22 0 4 62 26 62h12" stroke-width="6" stroke-linecap="round" style="stroke:var(--art-screen)"/><rect x="86" y="84" width="22" height="14" rx="3" style="fill:var(--art-body)"/></svg>',
+    case: '<svg viewBox="0 0 120 150" fill="none"><rect x="26" y="6" width="68" height="138" rx="16" style="fill:var(--art-soft)"/><rect x="34" y="14" width="52" height="122" rx="10" style="fill:var(--art-body)"/><rect x="38" y="20" width="22" height="22" rx="6" style="fill:var(--art-soft)"/><circle cx="46" cy="28" r="4" style="fill:var(--art-screen)"/><circle cx="54" cy="36" r="3" style="fill:var(--art-screen)"/></svg>',
+    glass: '<svg viewBox="0 0 120 150" fill="none"><rect x="28" y="8" width="64" height="134" rx="12" stroke-width="3" style="stroke:var(--art-screen);fill:var(--art-soft)"/><path d="M40 30 70 8M44 70l34-44M44 112l44-56" stroke="#fff" stroke-width="3" opacity=".7"/><rect x="50" y="14" width="20" height="4" rx="2" style="fill:var(--art-body)"/></svg>',
+    power: '<svg viewBox="0 0 120 120" fill="none"><rect x="26" y="18" width="68" height="88" rx="12" style="fill:var(--art-body)"/><rect x="36" y="30" width="48" height="10" rx="3" style="fill:var(--art-soft)"/><rect x="36" y="50" width="10" height="38" rx="2" style="fill:var(--art-screen)"/><rect x="50" y="50" width="10" height="38" rx="2" style="fill:var(--art-screen)"/><rect x="64" y="50" width="10" height="38" rx="2" style="fill:var(--art-screen)" opacity=".4"/></svg>',
+    watch: '<svg viewBox="0 0 120 150" fill="none"><rect x="42" y="4" width="36" height="34" rx="6" style="fill:var(--art-soft)"/><rect x="42" y="112" width="36" height="34" rx="6" style="fill:var(--art-soft)"/><rect x="26" y="34" width="68" height="82" rx="18" style="fill:var(--art-body)"/><rect x="33" y="42" width="54" height="66" rx="12" style="fill:var(--art-screen)"/><path d="M60 54v22l14 8" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/></svg>'
+  };
+
+  var CATS = [
+    { id: "all", label: "All" },
+    { id: "phone", label: "Mobile Phones" },
+    { id: "accessory", label: "Accessories" },
+    { id: "earbuds", label: "Earbuds" },
+    { id: "charger", label: "Chargers & Cables" },
+    { id: "protect", label: "Covers & Glass" },
+    { id: "power", label: "Power Banks" }
+  ];
+
+  /* Sample data only. Replace with real stock later. */
+  var P = [
+    { n: "Sample Smartphone A", k: "Mobile Phone", g: "phone", a: "phone", s: "6 GB RAM | 128 GB | 5000 mAh", p: 9999 },
+    { n: "Sample Smartphone B", k: "Mobile Phone", g: "phone", a: "phone", s: "8 GB RAM | 128 GB | 5000 mAh", p: 14999 },
+    { n: "Sample Smartphone C", k: "Mobile Phone", g: "phone", a: "phone", s: "8 GB RAM | 256 GB | AMOLED", p: 21999 },
+    { n: "Sample Smartphone D", k: "Mobile Phone", g: "phone", a: "phone", s: "12 GB RAM | 256 GB | 5G", p: 32999 },
+    { n: "Sample Wireless Earbuds", k: "Earbuds", g: "accessory", c: "earbuds", a: "earbuds", s: "Bluetooth | Charging case", p: 899 },
+    { n: "Sample Neckband", k: "Earbuds", g: "accessory", c: "earbuds", a: "earbuds", s: "Bluetooth | Long battery", p: 699 },
+    { n: "Sample Fast Charger 33W", k: "Charger", g: "accessory", c: "charger", a: "charger", s: "Type-C | Fast charging", p: 599 },
+    { n: "Sample USB Cable", k: "Cable", g: "accessory", c: "charger", a: "cable", s: "Type-C | 1 metre", p: 199 },
+    { n: "Sample Back Cover", k: "Phone Cover", g: "accessory", c: "protect", a: "case", s: "Shock-proof | Choose model", p: 249 },
+    { n: "Sample Tempered Glass", k: "Screen Guard", g: "accessory", c: "protect", a: "glass", s: "Full cover | Choose model", p: 149 },
+    { n: "Sample Power Bank 10000", k: "Power Bank", g: "accessory", c: "power", a: "power", s: "10000 mAh | Dual output", p: 1199 },
+    { n: "Sample Smart Watch", k: "Smart Watch", g: "accessory", c: "earbuds", a: "watch", s: "Bluetooth calling | Touch", p: 1499 }
+  ];
+
+  var state = { cat: "all", q: "" };
+  var grid = document.getElementById("grid");
+  var chipsEl = document.getElementById("chips");
+  var countEl = document.getElementById("count");
+  var qEl = document.getElementById("q");
+
+  function inr(n) { return "₹" + n.toLocaleString("en-IN"); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  function matchCat(p) {
+    if (state.cat === "all") return true;
+    if (state.cat === "phone") return p.g === "phone";
+    if (state.cat === "accessory") return p.g === "accessory";
+    return p.c === state.cat;
+  }
+
+  function renderChips() {
+    chipsEl.innerHTML = CATS.map(function (c) {
+      return '<button type="button" class="chip" data-cat="' + c.id + '" aria-pressed="' + (state.cat === c.id) + '">' + c.label + "</button>";
+    }).join("");
+  }
+
+  function render() {
+    var q = state.q.trim().toLowerCase();
+    var list = P.filter(function (p) {
+      return matchCat(p) && (!q || (p.n + " " + p.k + " " + p.s).toLowerCase().indexOf(q) > -1);
+    });
+    countEl.textContent = list.length + (list.length === 1 ? " sample product" : " sample products");
+    if (!list.length) {
+      var ask = state.q.trim() || "a product";
+      grid.innerHTML = '<div class="empty">No sample product matches your search.<br>Ask us on WhatsApp if you are looking for something specific.<br><a class="btn btn-wa btn-sm" target="_blank" rel="noopener" href="' + wa("Hello SAURABH MOBILE, do you have " + ask + "?") + '">Ask on WhatsApp</a></div>';
+      return;
+    }
+    grid.innerHTML = list.map(function (p) {
+      var msg = "Hello SAURABH MOBILE, I am interested in " + p.n + ". Please share the current price and availability.";
+      return '<article class="card"><div class="img"><span class="tag">Sample</span>' + ART[p.a] + '</div><div class="body">' +
+        '<span class="kind">' + esc(p.k) + '</span><h3>' + esc(p.n) + '</h3><span class="spec">' + esc(p.s) + '</span>' +
+        '<div class="price">' + inr(p.p) + '<small>Sample price</small></div>' +
+        '<a class="btn btn-wa btn-sm" target="_blank" rel="noopener" href="' + wa(msg) + '">Enquire on WhatsApp</a></div></article>';
+    }).join("");
+  }
+
+  chipsEl.addEventListener("click", function (e) {
+    var b = e.target.closest(".chip"); if (!b) return;
+    state.cat = b.getAttribute("data-cat"); renderChips(); render();
+  });
+  qEl.addEventListener("input", function () { state.q = qEl.value; render(); });
+  document.querySelectorAll("[data-go]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      state.cat = b.getAttribute("data-go"); renderChips(); render();
+      document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  var copyBtn = document.getElementById("copyBtn");
+  copyBtn.addEventListener("click", function () {
+    var done = function () { copyBtn.textContent = "Copied"; setTimeout(function () { copyBtn.textContent = "Copy number"; }, 1800); };
+    try {
+      navigator.clipboard.writeText("+917618959926").then(done, function () {
+        var r = document.createRange(); r.selectNodeContents(document.getElementById("numText"));
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      });
+    } catch (err) {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById("numText"));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    }
+  });
+
+  renderChips(); render();
+})();
+</script>
+
+</body>
+</html>
